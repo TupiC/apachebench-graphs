@@ -1,0 +1,14 @@
+services:
+  apachebench-graphs:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./results:/app/results
+    tty: true
+    networks:
+      - local-network
+
+networks:
+  local-network:
+    driver: bridge
